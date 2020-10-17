@@ -1,28 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta content="荣波矿粉加工厂创办于1996年，是一家以生产建筑装修材料为主的私营工厂。本厂先后定址于海南的琼中、澄迈和屯昌等地，
-					并于2005年迁至海南定安县新竹镇新序，至今已有18年经营历史。" name="description"></meta>
-					<meta content="荣波矿粉加工厂，荣波，矿粉，矿粉加工厂，新竹荣波，腻子粉，沸石粉，定安新竹" name="keywords"></meta>
-<link rel="shortcut icon" href="favicon.ico" />
-<link href="favicon.ico" rel="shortcut icon"></link>
-<link href="favicon.ico" type="image/vnd.microsoft.icon" rel="icon"></link>
-<link rel="stylesheet" href="style/index.css" />
-<!--[if IE 6]><link rel="stylesheet" type="text/css" href="style/ie.css" /><![endif]-->
-<!--[if IE 7]><link rel="stylesheet" type="text/css" href="style/ie7.css" /><![endif]-->
-<title>荣波矿粉加工厂</title>
-</head>
-<body>
-   <video controls width="250">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+	<body>
+		
+			<style>
+				html,
+				body {
+					margin: 0;
+					width: 100%;
+					height: 100%;
+				}
+			</style>
+			
+			<div id="bg" style="width: 100%; height: 100%; position: fixed;	z-index: -1;">
+				<iframe src="https://tools.pursuewind.com/acgPicPPTShow/" width="100%" height="100%" style="border: 0;"></iframe>
+			</div>
+			
+			<!-- 你的网页源码在这之后 -->
+			
 
-    <source src="http://open.iqiyi.com/developer/player_js/coopPlayerIndex.html?vid=dfcbdcb358f09e2f641b324fdc29ec07&tvId=6232527824727000&accessToken=2.ef9c39d6c7f1d5b44768e38e5243157d&appKey=8c634248790d4343bcae1f66129c1010&appId=1368&height=100%&width=100%"
-            type="video/mp4"> 
-
-    Sorry, your browser doesn't support embedded videos.
-</video>
-</body>
-<script src="js/jquery.js"  type="text/javascript"></script>
-<script src="js/jquery.KinSlideshow-1.2.1.min.js" type="text/javascript"></script>
-<script src="js/index.js" type="text/javascript"></script>
+		<style>
+			.bg {
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				z-index: -1;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+				animation: bg 10s infinite;
+			}
+			 
+			#bg1 {
+				background-image: url('https://tools.pursuewind.com/acgPic/?1');
+			}
+			 
+			#bg2 {
+				animation-delay: 5s;			/* bg2延迟5秒开始。同时bg2一开始无图片，使bg1淡入时背景为白色而不是另一张图片 */
+			}
+			 
+			@keyframes bg{
+				0%{transform: scale(1.5, 1.5);opacity: 0;}
+				20%{opacity: 1;}   				/* 0~2s 载入 */
+				30%{transform: scale(1, 1);}   			/* 0~3s图片缩放 */
+				50%{opacity: 1;}   				/* 5~7s 淡出 */
+				70%{opacity: 0;}   				/* 7~10s 图片隐藏。另一个背景在本背景淡出同时载入 */
+				100%{opacity: 0;}
+			}
+		
+		</style>
+		
+		
+	</body>
 </html>
+
