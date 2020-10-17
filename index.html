@@ -3,27 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
-		
-	</head>
-	<body>
-		
-			<style>
-				html,
-				body {
-					margin: 0;
-					width: 100%;
-					height: 100%;
-				}
-			</style>
-			
-			<div id="bg" style="width: 100%; height: 100%; position: fixed;	z-index: -1;">
-				<iframe src="http://api.btstu.cn/sjbz/zsy.php" width="100%" height="100%" style="border: 0;"></iframe>
-			</div>
-			
-			<!-- 你的网页源码在这之后 -->
-			
-
-		<style>
+		<style type="text/css">
 			.bg {
 				width: 100%;
 				height: 100%;
@@ -37,7 +17,7 @@
 			}
 			 
 			#bg1 {
-				background-image: url('http://api.btstu.cn/sjbz/zsy.php');
+				background-image: url('http://api.btstu.cn/sjbz/zsy.php?1');
 			}
 			 
 			#bg2 {
@@ -52,10 +32,29 @@
 				70%{opacity: 0;}   				/* 7~10s 图片隐藏。另一个背景在本背景淡出同时载入 */
 				100%{opacity: 0;}
 			}
-		
-		</style>
-		
-		
-	</body>
-</html>
 
+		</style>
+	</head>
+	<body>
+		<div id="bg2" class="bg"></div>
+		<div id="bg1" class="bg"></div>
+	</body>
+	<script type="text/javascript">
+		countImg = 1;
+		countTime = 0;
+		bg1Container = document.getElementById("bg1");
+		bg2Container = document.getElementById("bg2");
+		 
+		setInterval(function(){
+			// 一个轮回为10秒（2个图片，第1张0-5s，第2张5-10s），每个背景在淡出后（第7秒）更新图片
+			countTime += 1;
+			if(countTime % 10 == 7){
+				countImg += 1;
+				bg1Container.style = `background-image: url(http://api.btstu.cn/sjbz/zsy.php?${countImg})`;
+			}else if((countTime + 5) % 10 == 7){	// 第2张图片默认无图片，比第一张延迟5s开始动画，+5保证了在第2秒开始加载图片
+				countImg += 1;
+				bg2Container.style = `background-image: url(http://api.btstu.cn/sjbz/zsy.php?${countImg})`;
+			}
+		}, 1000);
+	</script>
+</html>
